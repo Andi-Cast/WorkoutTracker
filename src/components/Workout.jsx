@@ -12,13 +12,15 @@ function Workout({id, title, date, exercises}) {
                 <div className="workout-column-label">Exercise</div>
                 <div className="workout-column-label">Sets</div>
                 <div className="workout-column-label">Repitions</div>
+                <div className="workout-column-label">Weight</div>
             </div>
             {exercises.map((exercise, index) => (
                 <Exercise
                     key={index}
                     name={exercise.name}
                     sets={exercise.sets}
-                    repetitions={exercise.repetitions}>
+                    repetitions={exercise.repetitions}
+                    weight={exercise.weight}>
                 </Exercise>
             ))}
             <AddExercise></AddExercise>

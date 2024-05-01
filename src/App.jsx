@@ -15,7 +15,8 @@ function App() {
                                         {
                                           name: 'Bench Press',
                                           sets: 2,
-                                          repetitions: 10
+                                          repetitions: 10,
+                                          weight: 345
                                         }
                                       ]
                                     },
@@ -27,7 +28,8 @@ function App() {
                                         {
                                           name: 'Pull-Ups',
                                           sets: 2,
-                                          repetitions: 10
+                                          repetitions: 10,
+                                          weight: 225
                                         }
                                       ]
                                     }

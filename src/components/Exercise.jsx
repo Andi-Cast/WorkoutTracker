@@ -1,6 +1,6 @@
 
 
-function Exercise({name, sets, repetitions}) {
+function Exercise({name, sets, repetitions, weight}) {
 
 
     return(
@@ -8,6 +8,7 @@ function Exercise({name, sets, repetitions}) {
             <div className="exercise-info">{name}</div>
             <div className="exercise-info">{sets}</div>
             <div className="exercise-info">{repetitions}</div>
+            <div className="exercise-info">{weight}</div>
             <button className="delete">Delete</button>  
         </div>
     );
