@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { nanoid } from "nanoid"
 import WorkoutList from "./components/WorkoutList"
 import Header from "./components/Header"
@@ -34,11 +34,21 @@ function App() {
                                       ]
                                     }
                                   ])
+  
+  //workouts is saved if there are changes         
+  useEffect(() => {
+    localStorage.setItem('workout-tracker-app-data', JSON.stringify(workouts))
+  }, [workouts])
+
+  function deleteWorkout(id) {
+    const newWorkouts = workouts.filter((workout) => workout.id !== id);
+    setWorkouts(newWorkouts);
+  }
 
   return (
     <div className="container">
       <Header></Header>
-      <WorkoutList workouts={workouts}></WorkoutList>
+      <WorkoutList workouts={workouts} handleDeleteWorkout={deleteWorkout}></WorkoutList>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import Workout from "./Workout";
 import AddWorkout from "./AddWorkout";
 
-function WorkoutList({workouts}) {
+function WorkoutList({workouts, handleDeleteWorkout}) {
 
     return(
         <div className="workout-list">
@@ -10,7 +10,8 @@ function WorkoutList({workouts}) {
                     id={workout.id}
                     title={workout.title}
                     date={workout.date}
-                    exercises={workout.exercises}>
+                    exercises={workout.exercises}
+                    handleDeleteWorkout={handleDeleteWorkout}>
                 </Workout>
             ))}
             <AddWorkout></AddWorkout>
