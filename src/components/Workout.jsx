@@ -26,7 +26,7 @@ function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handle
                 </Exercise>
             ))}
             <AddExercise></AddExercise>
-            <button onClick={() => handleDeleteWorkout(id)}>Delete Workout</button>
+            <button onClick={() => handleDeleteWorkout(workoutId)}>Delete Workout</button>
        </div>
     );
 }
