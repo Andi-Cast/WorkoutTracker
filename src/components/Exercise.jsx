@@ -1,6 +1,6 @@
 
 
-function Exercise({name, sets, repetitions, weight}) {
+function Exercise({workoutId, exerciseId, name, sets, repetitions, weight, handleDeleteExercise}) {
 
 
     return(
@@ -9,7 +9,7 @@ function Exercise({name, sets, repetitions, weight}) {
             <div className="exercise-info">{sets}</div>
             <div className="exercise-info">{repetitions}</div>
             <div className="exercise-info">{weight}</div>
-            <button className="delete">Delete</button>  
+            <button onClick={() => handleDeleteExercise(exerciseId, workoutId)} className="delete">Delete</button>  
         </div>
     );
 }

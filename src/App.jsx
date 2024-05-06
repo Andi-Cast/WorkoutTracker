@@ -13,6 +13,7 @@ function App() {
                                       date: new Date().toLocaleDateString(),
                                       exercises: [
                                         {
+                                          id: nanoid(),
                                           name: 'Bench Press',
                                           sets: 2,
                                           repetitions: 10,
@@ -26,6 +27,7 @@ function App() {
                                       date: new Date().toLocaleDateString(),
                                       exercises: [
                                         {
+                                          id: nanoid(),
                                           name: 'Pull-Ups',
                                           sets: 2,
                                           repetitions: 10,
@@ -40,15 +42,30 @@ function App() {
     localStorage.setItem('workout-tracker-app-data', JSON.stringify(workouts))
   }, [workouts])
 
-  function deleteWorkout(id) {
-    const newWorkouts = workouts.filter((workout) => workout.id !== id);
-    setWorkouts(newWorkouts);
+  function deleteWorkout(workout_id) {
+    const updatedWorkouts = workouts.filter((workout) => workout.id !== workout_id);
+    setWorkouts(updatedWorkouts);
+  }
+
+  function deleteExercise(exercise_id, workout_id) {
+    const updatedWorkouts = workouts.map(workout => {
+      if(workout.id === workout_id) {
+        const updatedExercises = workout.exercises.filter(exercise => exercise.id !== exercise_id);
+        return {...workout, exercises: updatedExercises};
+      }
+      return workout;
+    });
+    setWorkouts(updatedWorkouts);
   }
 
   return (
     <div className="container">
       <Header></Header>
-      <WorkoutList workouts={workouts} handleDeleteWorkout={deleteWorkout}></WorkoutList>
+      <WorkoutList workouts={workouts} 
+                   handleDeleteWorkout={deleteWorkout}
+                   handleDeleteExercise={deleteExercise}>
+
+      </WorkoutList>
     </div>
   )
 }

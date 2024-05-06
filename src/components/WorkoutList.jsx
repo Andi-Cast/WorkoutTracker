@@ -1,17 +1,18 @@
 import Workout from "./Workout";
 import AddWorkout from "./AddWorkout";
 
-function WorkoutList({workouts, handleDeleteWorkout}) {
+function WorkoutList({workouts, handleDeleteWorkout, handleDeleteExercise}) {
 
     return(
         <div className="workout-list">
             {workouts.map((workout) => (
                 <Workout
-                    id={workout.id}
+                    workoutId={workout.id}
                     title={workout.title}
                     date={workout.date}
                     exercises={workout.exercises}
-                    handleDeleteWorkout={handleDeleteWorkout}>
+                    handleDeleteWorkout={handleDeleteWorkout}
+                    handleDeleteExercise={handleDeleteExercise}>
                 </Workout>
             ))}
             <AddWorkout></AddWorkout>

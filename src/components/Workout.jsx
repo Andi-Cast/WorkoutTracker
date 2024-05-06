@@ -1,7 +1,7 @@
 import Exercise from "./Exercise";
 import AddExercise from "./AddExercise";
 
-function Workout({id, title, date, exercises, handleDeleteWorkout}) {
+function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handleDeleteExercise}) {
 
 
     return(
@@ -14,13 +14,15 @@ function Workout({id, title, date, exercises, handleDeleteWorkout}) {
                 <div className="workout-column-label">Repitions</div>
                 <div className="workout-column-label">Weight</div>
             </div>
-            {exercises.map((exercise, index) => (
+            {exercises.map((exercise) => (
                 <Exercise
-                    key={index}
+                    workoutId={workoutId}
+                    exerciseId={exercise.id}
                     name={exercise.name}
                     sets={exercise.sets}
                     repetitions={exercise.repetitions}
-                    weight={exercise.weight}>
+                    weight={exercise.weight}
+                    handleDeleteExercise={handleDeleteExercise}>
                 </Exercise>
             ))}
             <AddExercise></AddExercise>
