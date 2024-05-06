@@ -57,14 +57,27 @@ function App() {
     });
     setWorkouts(updatedWorkouts);
   }
+  
+  function addWorkout(title) {
+    const date = new Date();
+    const newWorkout = {
+      id: nanoid(),
+      title: title,
+      date: date.toLocaleDateString(),
+      exercises: []
+    }
+
+    const newWorkouts = [...workouts, newWorkout]
+    setWorkouts(newWorkouts)
+  }
 
   return (
     <div className="container">
       <Header></Header>
       <WorkoutList workouts={workouts} 
                    handleDeleteWorkout={deleteWorkout}
-                   handleDeleteExercise={deleteExercise}>
-
+                   handleDeleteExercise={deleteExercise}
+                   handleAddWorkout={addWorkout}>
       </WorkoutList>
     </div>
   )
