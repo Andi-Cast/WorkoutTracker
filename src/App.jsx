@@ -71,13 +71,25 @@ function App() {
     setWorkouts(newWorkouts)
   }
 
+  function addExercise(workout_id, newExercise) {
+
+    const updatedWorkouts = workouts.map(workout => {
+      if(workout.id === workout_id) {
+          return {...workout, exercises: [...workout.exercises, newExercise]};
+      }
+      return workout;
+    });
+    setWorkouts(updatedWorkouts);
+  }
+
   return (
     <div className="container">
       <Header></Header>
       <WorkoutList workouts={workouts} 
                    handleDeleteWorkout={deleteWorkout}
                    handleDeleteExercise={deleteExercise}
-                   handleAddWorkout={addWorkout}>
+                   handleAddWorkout={addWorkout}
+                   handleAddExercise={addExercise}>
       </WorkoutList>
     </div>
   )

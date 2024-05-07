@@ -1,7 +1,7 @@
 import Exercise from "./Exercise";
 import AddExercise from "./AddExercise";
 
-function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handleDeleteExercise}) {
+function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handleDeleteExercise, handleAddExercise}) {
 
 
     return(
@@ -25,7 +25,7 @@ function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handle
                     handleDeleteExercise={handleDeleteExercise}>
                 </Exercise>
             ))}
-            <AddExercise></AddExercise>
+            <AddExercise workoutId={workoutId} handleAddExercise={handleAddExercise}></AddExercise>
             <button onClick={() => handleDeleteWorkout(workoutId)}>Delete Workout</button>
        </div>
     );
