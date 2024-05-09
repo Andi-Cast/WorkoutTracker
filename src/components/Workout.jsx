@@ -8,7 +8,7 @@ function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handle
        <div className="workout">
             <h3 className="workout-title">{title}</h3>
             <span className="workout-date">{date}</span>
-            <div className="workout-column-label-contianer">
+            <div className="workout-column-label-container">
                 <div className="workout-column-label">Exercise</div>
                 <div className="workout-column-label">Sets</div>
                 <div className="workout-column-label">Repitions</div>
