@@ -1,9 +1,60 @@
-/* App.css */
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.workout-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.workout {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: hsl(210, 17%, 98%);
+    border-radius: 10px;
+    border: 1px solid hsl(210, 17%, 68%);
+}
+
+.workout button {
+    background-color: red;
+    border-radius: 5px;
+    height: 25px
+}
+
+.workout button:hover {
+    background-color: hsl(0, 100%, 40%);
+    color: white;
+}
+
+.workout-title {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+
+}
+
+.workout-date {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.workout-column-label-container {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.workout-column-label {
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 .add-workout {
@@ -13,7 +64,7 @@
 .add-workout input[type="text"] {
     padding: 10px;
     margin-right: 10px;
-    border: 1px solid #ccc;
+    border: 3px solid black;
     border-radius: 5px;
     font-size: 16px;
     width: 200px;
@@ -33,58 +84,53 @@
     background-color: hsl(211, 100%, 30%);
 }
 
-.workout-list {
-    margin-top: 20px;
-}
-
-.workout {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-}
-
-.workout-title {
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-}
-
-.workout-date {
-    display: block;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-}
-
-.workout-column-label-container {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.workout-column-label {
-    flex: 1;
-    font-weight: bold;
-    border: 3px solid blue;
-}
-
 .exercise-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 5px;
     align-items: center;
-    border-top: 1px solid #ccc;
-    padding: 10px 0;
-    border: 3px solid red;
 }
 
 .exercise-info {
-    flex: 1;
-    border: 3px solid green;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
-.delete {
-    margin-left: 10px;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
+.exercise-container button {
+    font-size: 1rem;
+    height: 25px;
+    color: black;
+    text-align: center;
+    background-color: hsl(0, 100%, 50%);
     border-radius: 5px;
-    cursor: pointer;
-    padding: 5px 10px;
+}
+
+.exercise-container button:hover {
+    background-color: hsl(0, 100%, 40%);
+    color: white;
+}
+
+.add-exercise {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    margin: 20px;
+}
+
+.add-exercise button {
+    background-color: hsl(120, 86%, 66%);
+    height: 25px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.add-exercise button:hover {
+    background-color: hsl(120, 86%, 46%);
+    color: white;
+}
+
+.add-exercise-input {
+    text-align: center;
+    height: 30px;
 }

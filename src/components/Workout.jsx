@@ -12,7 +12,7 @@ function Workout({workoutId, title, date, exercises, handleDeleteWorkout, handle
                 <div className="workout-column-label">Exercise</div>
                 <div className="workout-column-label">Sets</div>
                 <div className="workout-column-label">Repitions</div>
-                <div className="workout-column-label">Weight</div>
+                <div className="workout-column-label">Weight (lbs)</div>
             </div>
             {exercises.map((exercise) => (
                 <Exercise

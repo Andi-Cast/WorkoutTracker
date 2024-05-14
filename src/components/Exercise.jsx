@@ -9,9 +9,7 @@ function Exercise({workoutId, exerciseId, name, sets, repetitions, weight, handl
             <div className="exercise-info">{sets}</div>
             <div className="exercise-info">{repetitions}</div>
             <div className="exercise-info">{weight}</div>
-            <div>
-                <button onClick={() => handleDeleteExercise(exerciseId, workoutId)} className="delete">Delete</button>  
-            </div>
+            <button onClick={() => handleDeleteExercise(exerciseId, workoutId)} className="delete">Delete</button>  
         </div>
     );
 }
