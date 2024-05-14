@@ -14,7 +14,7 @@
 ## **Examples Images**
 #### The image below is a screenshot of what is expected when loading the app. 
 - Image 1: Screenshot of App
-  - <img src= height="auto" width="75%" >
+  - <img src="https://github.com/Andi-Cast/WorkoutTracker/blob/main/WorkoutAppScreenshot.png" height="auto" width="75%" >
 
   -----
 
